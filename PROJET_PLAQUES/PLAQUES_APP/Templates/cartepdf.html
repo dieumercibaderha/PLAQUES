@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARTE</title>
+   
+
+</head>
+<body>
+
+   <center>
+    <div style="width: 335px; height: 220px; display:block" class="carte">
+        <div class="entete" style="display: flex; ">
+            <div class="logo">
+                <img  src="http://127.0.0.1:8000/{% static '/images/arm.png' %}" alt="">
+            </div>
+            <div class="titre" style="width: 80%;">
+                <h3>
+                    REPUBLIQUE DEMOCRATIQUE DU CONGO
+                </h3>
+                <h2>
+                    COORDINATION TAXIMEN MOTOS AU CONGO
+                </h2>
+                <h3 style="margin-top:-4%">
+                    BUREAU NATIONAL
+                </h3>
+                <H5 style="margin-top:-4%; color:red; font-size:6px;font-family:Verdana, Geneva, Tahoma, sans-serif; text-decoration-style: double;
+                text-decoration-color: red;">
+                   <u> <i> N°JUST/SG/20/0921/2012 du 12.JUIN.2012</i></u>
+                </H5>
+            </div>
+            <div class="drapeau">
+                <img height="20px" width="30px" src="http://127.0.0.1:8000/{% static 'images/rdc.png' %}" alt="">
+            </div>
+        </div>
+        <div class="corps" style="display: flex; background-color:white;" >
+            <div>
+                <img  style="height: 80px; width:60px; margin-top:9%" src="http://127.0.0.1:8000/{{photo.url}}" alt="non">
+            </div>
+            <div class="body-body" style="margin-left: 2%;">
+                <div class="titre_cota">
+                    <h1>COTAMAsbl 2023</h1>
+                    <h4>CARTE DE MEMBRES N°{{id}}</h4>
+                </div>
+                <div class="identite">
+                    <p>Nom : <strong>{{nom}}</strong>  </p>
+                    <p>Tel : <strong>{{tele}}</strong>  </p>
+                    <p>Mail : <strong>{{mail}}</strong>  </p>
+                    <p>Addresse:<strong>{{addresse}}</strong> </p>
+
+                </div>
+            </div>
+            <div class="i">
+                <img style="height: 80px; width: 80px;" src="http://127.0.0.1:8000/{% static 'images/qrprop.png' %}" alt="non">
+            </div>
+
+        </div>
+        <div class="pieds" style="margin-top: 3%;">
+            <div>
+                 <em> <p>Cette carte ne doit etre mouillé, surchargée ou raturée</p> </em>
+                
+            </div>
+            <div style="display: flex;" class="titrepied">
+                <div style="margin-top:-4.5%; margin-left:7%; font-family:Tahoma">
+                    <h6 style="font-size: 4px;">
+                        KASEREKA KALUNDERO
+                    </h6>
+                    <h6 style="font-size: 4px;">
+                        <strong style="color: red;">
+                            <em> President et Coord. Général</em>
+                        </strong>
+                       
+                    </h6>
+                </div>
+                <div style="margin-top:-4.5%; margin-left:62%; font-family:Tahoma">
+                    <h6 style="font-size: 4px; ">
+                        KASEREKA KALUNDERO
+                    </h6>
+                    <h6 style="font-size: 4px;">
+                        <strong style="color: red;">
+                            <em> Coord. Administratif</em>
+                        </strong>
+                       
+                    </h6>
+                </div>
+
+            </div>
+            
+        </div>
+
+    </div>
+   
+    
+
+   </center>
+    
+</body>
+</html>

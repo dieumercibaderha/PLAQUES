@@ -1,0 +1,448 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>PROPRIETAIRE</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'%} " />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+  <!-- fonts awesome style -->
+  <link href="{% static 'css/font-awesome.min.css' %} " rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href=" {% static 'css/style1.css' %} " rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+</head>
+
+<body class="sub_page" style="padding-bottom: 10%;">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <div class="custom_menu-btn">
+          <button onclick="openNav()">
+            <span class="s-1"> </span>
+            <span class="s-2"> </span>
+            <span class="s-3"> </span>
+          </button>
+        </div>
+        <div id="myNav" class="overlay">
+          <div class="menu_btn-style ">
+            <button onclick="closeNav()">
+              <span class="s-1"> </span>
+              <span class="s-2"> </span>
+              <span class="s-3"> </span>
+            </button>
+          </div>
+          <div class="overlay-content">
+            <a class="" href="{% url 'index' %}">
+              Accueil
+            </a>
+            <a class="active" href="{% url 'about' %}">
+              Apropos
+            </a>
+            <a class="" href="{% url 'service' %}">
+              Nos Services
+            </a>
+            <a class="" href="{% url 'controle' %}">
+              Controle
+            </a>
+            <a class="" href="{% url 'deconnexion' %}">
+              DECONNEXION
+            </a>
+          </div>
+        </div>
+        <a class="navbar-brand" href="index.html">
+          <span >
+            COTAM_Asbl
+          </span>
+        </a>
+        <div class="user_option">
+          <form class="form-inline">
+            <button class="btn  nav_search-btn" type="submit">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+          </form>
+          <a href="">
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="name_style">
+          <h6>
+            C
+            O
+            T
+            A
+            M
+            _
+            A
+            s
+            b
+            l
+          </h6>
+        </div>
+      </nav>
+    </header>
+    <!-- end header section -->
+  </div>
+
+
+  <!-- contact section -->
+
+  <section style="height:60%; " class="contact_section layout_padding">
+    
+     <a style="margin-top:-14%; width: 140px; background-color: rgba(10, 28, 80, 0.959); border-color:rgb(207, 128, 32); border-style:solid 6px; border: size 6px; margin-left:7%" type="button" class="btn btn-primary" href="{% url 'listpropdf' %}">
+      Voir_List
+     </a>
+    
+    <button style="margin-top:-17%; background-color: green; margin-left:80%" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Ajouter_Prop
+    </button>
+    <form action="" method="get" style="margin-top:-8%;">
+      <input style="margin-top: -40%; width:65%;margin-left:7%; border: solid 3px rgb(10, 10, 88); border-radius:2%;" type="search" name="recherche" id="">
+      <button style=" width: 140px; background-color: rgba(10, 28, 80, 0.959); border-color:rgb(207, 128, 32); border-style:solid 6px; border: size 6px; margin-left:7.6%"
+       type="submit">search</button>
+    </form>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-5 col-lg-4 offset-md-1 offset-lg-1">
+          <div class="form_container" style="margin-left:-20%">
+            <div class="heading_container">
+            </div>
+           
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header" style="background-color: rgba(10, 9, 77, 0.87); color:white">
+                    <h5 class="modal-title" id="exampleModalLabel" style="font-weight:1000; margin-left:15%">IDENTIFICATION PROPRIETAIRE</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form action="{% url 'idpro'  %}" method="post" enctype="multipart/form-data">
+                      {% csrf_token %}
+                        {{forpro.nom}} 
+                        {{forpro.adresse}} 
+                        {{forpro.Mail}} 
+                        {{forpro.Tel}} 
+                        {{forpro.Photo}} 
+                     
+                     
+                      <div class="d-flex" style="margin-left: 27%;">
+                    
+                        <button type="submit" >
+                          ENREGISTRER
+                        </button>
+                      
+                      </div>
+                  
+                      
+                    </form> 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>      
+          
+        <div style="display: block; margin-left:0.1%; margin-top:75%; height:-200%;">
+          <div style="margin-top:-80%;" class="table-responsive">
+            <table class="table" >
+              <thead style="background-color:rgb(247, 148, 29); color:white; ">
+                <tr>
+                  <th>ID</th>
+                  <th>NOM</th>
+                  <th>ADDRESSE</th>
+                  <th>MAIL</th>
+                  <th>TEL</th>
+                  <th>PHOTO</th>
+                  <th>ACTIONS</th>
+                </tr>
+              </thead>
+              <tbody>
+                  {% for l in listprop %}
+                  <tr>
+                    <td>{{l.id}}</td>
+                    <td>{{l.nom}}</td>
+                    <td>{{l.adresse}}</td>
+                    <td>{{l.Mail}}</td>
+                    <td>{{l.Tel}}</td>
+                    <td> <img style="height: 50px; width:35px; border-radius:20%;" src="{{l.Photo.url}}" alt="{{l.photo.url}}"> </td>
+                    <td style="display: flex; padding-top:0.1%">
+                        <a style="height: 40px; margin-top:6%" type="button" class="btn btn-primary"   data-bs-toggle="modal" data-bs-target="#exampleModal2-{{forloop.counter}}" 
+                        style="color: white;" href="{% url 'modifier_pro'  %}">update</a> 
+                      
+                        <a style="height: 40px; margin-top:6%; margin-left:2%; background-color:brown" type="button" class="btn btn-primary"   data-bs-toggle="modal" data-bs-target="#exampleModal3-{{forloop.counter}}" 
+                        style="color: white;" href="{% url 'supprimer_pro' %}">Delete</a> 
+                        <a style="height: 40px; margin-top:6%; margin-left:2%; background-color:lightblue" type="button" class="btn btn-primary"    
+                        style="color: white;" href="{% url 'pdf_generation' l.id %}">View</a> 
+                    </td>
+                        
+                  </tr>
+
+                  <div class="modal fade" id="exampleModal3-{{forloop.counter}}" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header" style=" background-color: rgba(10, 9, 77, 0.87); color:white; width:100%">
+                          <h5 class="modal-title" id="exampleModalLabel2" style="font-weight:1000; margin-left:10%">SUPPRESSION PROPRIETAIRE</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                         <center>
+                         <h3>VOULEZ-VOUS VRAIMENT SUPRIMEZ "{{l.nom}}" ?</h3>
+                         <form action="{% url 'supprimer_pro'  %}" method="post">
+                             {% csrf_token %}
+                              <input type="text" name="id" hidden readonly id="" value="{{l.id}}">
+                          <div style=" background-color: rgba(10, 9, 77, 0.87); color:white; width:100%">
+                            <button style="margin-bottom: 2%;"><a href="{% url 'idpro' %}">Annulez</a></button>
+                            <button style="margin-bottom: 2%;" type="submit">continuez</button>
+                          </div>
+                         </form> 
+                         </center>
+                        </div>
+                       
+                      </div>
+                    </div>
+                  </div>
+ 
+                  {% endfor %}
+                   
+                  
+                  {% if listprop.has_other_pages %}
+
+                
+                    
+                  {% endif %}
+                    
+                  
+
+              </tbody>
+            </table>
+            
+            <div  aria-label="Page navigation example" >
+                 <div style="align-items: center; margin-left:38%;">
+                  {% if listprop.has_previous %}
+                  <a href="?page={{listprop.previous_page_number}}" class="btn btn-outline-primary" style="border-color: rgb(22, 22, 179); color:rgb(22, 22, 179)">Retour</a>  
+                  {% endif %}
+    
+                  
+                  {% for page_number in listprop.paginator.page_range  %}
+                    
+                    {% if listprop.number == page_number %}
+    
+                      <button class="btn btn-outline-primary active " style="border-radius: 10%; margin-top: 3px; height:40px; margin-bottom:4px;width:30px; background-color:rgb(22, 22, 179);">
+                        <span>{{page_number}} <span class="sr-only">{{current}} </span> </span>
+    
+                      </button>
+                      {% else %}
+                    
+                        <a href="?page={{page_number}}" class="btn btn-outline-primary" style="border-color: rgb(22, 22, 179); color:rgb(22, 22, 179);">
+                          {{page_number}}
+                         </a>
+                       {% endif %}      
+    
+                  {% endfor %}
+                  {% if listprop.has_next %}
+                  <a href="?page={{listprop.next_page_number}}" class="btn btn-outline-primary" style="border-color: rgb(22, 22, 179); color:rgb(22, 22, 179);">Suivant</a>  
+                  {% endif %} 
+                 </div>     
+              
+                
+          </div>
+              
+
+            {% for l in listprop %}
+            <div class="modal fade" id="exampleModal2-{{forloop.counter}}" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header" style="background-color: rgba(10, 9, 77, 0.87); color:white">
+                    <h5 class="modal-title" id="exampleModalLabel2" style="font-weight:1000; margin-left:10%">MODIFICATION PROPRIETAIRE</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                   
+                   <form action="{% url 'modifier_pro'   %}" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                      <input type="text" name="id" hidden readonly id="" value="{{l.id}}">
+                      <input type="text" name="nom"  id="" value="{{l.nom}}">
+                      <input type="text" name="addresse" id="" value="{{l.adresse}}">
+                      <input type="text" name="mail"  id="" value="{{l.Mail}}">
+                      <input type="tel" name="tel"  id="" value="{{l.Tel}}">
+                      <input type="file" name="photo" id="">
+
+                    <div class="d-flex " style=" background-color: rgba(10, 9, 77, 0.87); color:white; width:100%">
+                      <button type="submit" style="margin-left: 28%; margin-bottom:2%">
+                        ENREGISTRER
+                      </button>
+                    </div>
+                    
+                  </form> 
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+           
+
+          </div>
+        </div>
+       
+       
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- end contact section -->
+
+
+  <!-- info section -->
+
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="info_contact">
+            <h4>
+              Addresses
+            </h4>
+            <div class="info_links">
+              <a class="active" href="{% url 'index' %}">
+                <img src="{% static 'images/nav-bullet.png' %}" alt="">
+                Accueil
+              </a>
+              <a class="" href="{% url 'about' %}">
+                <img src="{% static 'images/nav-bullet.png' %}" alt="">
+                A proposS
+              </a>
+              <a class="" href="{% url 'service' %}">
+                <img src="{% static 'images/nav-bullet.png' %}" alt="">
+                Services
+              </a>
+              <a class="" href="{% url 'testimonial' %}">
+                <img src="{% static 'images/nav-bullet.png' %}" alt="">
+                Controle
+              </a>
+              <a class="" href="{% url 'deconnexion' %}">
+                <img src="{% static 'images/nav-bullet.png' %}" alt="">
+                deconnexion
+              </a>
+             
+            </div>
+          </div>
+          <div class="info_social">
+            <a href="">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_link_box">
+            <h4>
+              Liens
+            </h4>
+            <div class="info_links">
+              <a class="active" href="{% url 'index' %}">
+                <img src="{% static 'images/nav-bullet.png' %}" alt="">
+                Accueil
+              </a>
+              <a class="" href="{% url 'about' %}">
+                <img src="{% static 'images/nav-bullet.png' %}" alt="">
+                A proposS
+              </a>
+              <a class="" href="{% url 'service' %}">
+                <img src="{% static 'images/nav-bullet.png' %}" alt="">
+                Services
+              </a>
+              <a class="" href="{% url 'testimonial' %}">
+                <img src="{% static 'images/nav-bullet.png' %}" alt="">
+                Controle
+              </a>
+              <a class="" href="{% url 'deconnexion' %}">
+                <img src="{% static 'images/nav-bullet.png' %}" alt="">
+                DECONNEXION
+              </a>
+             
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_detail">
+            <h4>
+              Info
+            </h4>
+            <p>
+              necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <h4>
+            Subscribe
+          </h4>
+          <form action="#">
+            <input type="text" placeholder="Enter email" />
+            <button type="submit">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end info section -->
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <p>
+            &copy; <span id="displayYear"></span> Tout droit reservé. conçue par 
+            <a href="https://html.design/">BADERHA MAHAMULI DIEUMERCI</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="{% static 'js/custom.js' %}"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+  <!-- End Google Map -->
+</body>
+
+</html>

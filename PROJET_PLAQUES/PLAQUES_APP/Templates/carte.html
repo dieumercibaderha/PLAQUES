@@ -1,0 +1,186 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARTE</title>
+
+    <link rel="stylesheet" href="{% static 'css/carte.css' %}">
+    <style>
+        .carte{
+            background-color:aliceblue;
+        
+            border-radius: 20%;
+        }
+        
+        .entete{
+            background-color: rgb(209, 203, 203);
+            width: 100%;
+            height: 21%;
+            border-top-left-radius: 3%;
+            border-top-right-radius: 3%;
+            align-items:stretch;
+        }
+        .entete img{
+            padding-top: 38%;
+        }
+        
+        .logo{
+            margin-left: 9%;
+            margin-top: -3%;
+        }
+        .drapeau{
+            margin-right: 10%;
+        }
+        .titre_cota h1{
+            font-style:normal;
+            font-weight: bold;
+            font-size: 20px;
+            color: rgb(74, 74, 138);
+            font-family: fantasy;
+            margin-top: -1%;
+            text-shadow: 0.1ch 2px rgb(156, 154, 154);
+        }
+        .body-body{
+            margin-left: 8%;
+        }
+        .body-body .identite{
+            font-size: 7px;
+            text-align: left;
+            margin-top: -8%;
+            font-family: Tahoma, Geneva, Verdana;
+        }
+        .corps img{
+            margin-left: 18%;
+            margin-top: 25%;
+            border-radius: 20%;
+        }
+        .corps .i{
+            margin-left: 2%;
+            margin-top: -5%;
+        }
+
+        .titre_cota h4{
+            margin-left: 5%;
+            font-size: 10px;
+            background-color: rgb(167, 34, 34);
+            color: white;
+            font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            border-radius: 25%;
+            margin-top: -10%;
+        }
+        .titre h3{
+            font-family:cursive;
+            font-weight: bolder;  
+            font-size: 7px;  
+        }
+        .titre h2{
+           font-size: 10px;
+           margin-left: 1%;  
+           text-align: center;
+        }
+        .pieds{
+            height: 20%;
+            margin-top:-1% ;
+            background-color: rgb(209, 203, 203);
+        }
+        .pieds p{
+            font-size: 6px;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+
+   <center>
+    <div style="width: 335px; height: 200px; display:block" class="carte">
+        <div class="entete" style="display: flex; ">
+            <div class="logo">
+                <img height="30px" width="30px" src="{% static '/images//arm.png' %}" alt="">
+            </div>
+            <div class="titre" style="width: 80%;">
+                <h3>
+                    REPUBLIQUE DEMOCRATIQUE DU CONGO
+                </h3>
+                <h2>
+                    COORDINATION TAXIMEN MOTOS AU CONGO
+                </h2>
+                <h3 style="margin-top:-4%">
+                    BUREAU NATIONAL
+                </h3>
+                <H5 style="margin-top:-4%; color:red; font-size:6px;font-family:Verdana, Geneva, Tahoma, sans-serif; text-decoration-style: double;
+                text-decoration-color: red;">
+                   <u> <i> N°JUST/SG/20/0921/2012 du 12.JUIN.2012</i></u>
+                </H5>
+            </div>
+            <div class="drapeau">
+                <img height="20px" width="30px" src="{% static 'images/rdc.png' %}" alt="">
+            </div>
+        </div>
+        <div class="corps" style="display: flex; background-color:white;" >
+            <div>
+                <img height="80px" width="60px" src="{{photo.url}}" alt="non">
+            </div>
+            <div class="body-body">
+                <div class="titre_cota">
+                    <h1>COTAM Asbl  2023</h1>
+                    <h4>CARTE DE MEMBRES N°{{id}}</h4>
+                </div>
+                <div class="identite">
+                    <p>Nom : <strong>{{nom}}</strong>  </p>
+                    <p>Tel : <strong>{{tele}}</strong>  </p>
+                    <p>Mail : <strong>{{mail}}</strong>  </p>
+                    <p>Addresse:<strong>{{addresse}}</strong> </p>
+
+                </div>
+            </div>
+            <div class="i">
+                <img height="80px" width="80px" src="{% static 'images/qrprop.png' %}" alt="non">
+            </div>
+
+        </div>
+        <div class="pieds">
+            <div>
+                <strong> <em> <p>Cette carte ne doit etre mouillé, surchargée ou raturée</p> </em></strong>
+                
+            </div>
+            <div style="display: flex;">
+                <div style="margin-top:-4.5%; margin-left:7%; font-family:Tahoma">
+                    <h6 style="font-size: 5px;">
+                        KASEREKA KALUNDERO
+                    </h6>
+                    <h6 style="font-size: 5px;">
+                        <strong style="color: red;">
+                            <em> President et Coord. Général</em>
+                        </strong>
+                       
+                    </h6>
+                </div>
+                <div style="margin-top:-4.5%; margin-left:50%; font-family:Tahoma">
+                    <h6 style="font-size: 5px; ">
+                        KASEREKA KALUNDERO
+                    </h6>
+                    <h6 style="font-size: 5px;">
+                        <strong style="color: red;">
+                            <em> Coord. Administratif</em>
+                        </strong>
+                       
+                    </h6>
+                </div>
+
+            </div>
+            
+        </div>
+
+    </div>
+    <a href="{% url 'pdf_generation' id %}">TELECHARGER</a>
+    
+
+   </center>
+    
+</body>
+</html>

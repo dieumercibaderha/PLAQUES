@@ -1,0 +1,66 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>REGISTER</title>
+    <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'%} " />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+  <!-- fonts awesome style -->
+  <link href="{% static 'css/font-awesome.min.css' %} " rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href=" {% static 'css/style1.css' %} " rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="{% static 'js/custom.js' %}"></script>
+
+  <style>
+    body{
+      background-color: #cae2e2;
+    }
+  </style>
+
+
+</head>
+<body>
+   
+    
+     
+ 
+    <h2 style="color: red;">{{mes}}</h2>
+    <center>
+      <div style="width: 40%; background-color:white; text-align:left;margin-top:7%;"  class="shadow p-4 mb-5 bg-body rounded">
+        <h2 style="width: 100%; text-align:center; background-color:rgb(23, 23, 88); color:white; border-radius:2%"> Erreur d'Enregistrement </h2>
+          <div style="align-items: center;" >
+            <img style="margin-left: 40%;" src="{% static 'images/attantion.png' %}" alt="">
+              <h4 style="text-align: justify;" > <span style="color: red;">la moto {{mono}} existe déja dans la base de données</span>  <br> <br> Attention Une moto doit etre enregistrer une seule fois et doit obtenir qu'une plaque  unique au niveau national</h4>
+              <a class="btn btn-primary" href="{% url 'vente' %}">Retour</a>
+            </div>
+      </div>
+    </center>
+    
+   
+   
+
+
+
+
+
+    <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <script src="{% static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/custom.js' %}"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+  <!-- End Google Map -->
+</body>
+</html>

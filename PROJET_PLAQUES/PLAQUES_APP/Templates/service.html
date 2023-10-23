@@ -1,0 +1,408 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>NOS SERVICES</title>
+
+   <!-- slider stylesheet -->
+   <link rel="stylesheet" type="text/css" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css'%} " />
+
+   <!-- bootstrap core css -->
+   <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+   <!-- fonts awesome style -->
+   <link href="{% static 'css/font-awesome.min.css' %} " rel="stylesheet" />
+ 
+   <!-- Custom styles for this template -->
+   <link href=" {% static 'css/style1.css' %} " rel="stylesheet" />
+   <!-- responsive style -->
+   <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+</head>
+
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <div class="custom_menu-btn">
+          <button onclick="openNav()">
+            <span class="s-1"> </span>
+            <span class="s-2"> </span>
+            <span class="s-3"> </span>
+          </button>
+        </div>
+        <div id="myNav" class="overlay">
+          <div class="menu_btn-style ">
+            <button onclick="closeNav()">
+              <span class="s-1"> </span>
+              <span class="s-2"> </span>
+              <span class="s-3"> </span>
+            </button>
+          </div>
+          <div class="overlay-content">
+            <a class="" href="{% url 'index' %}">
+              Accueil
+            </a>
+            <a class="active" href="{% url 'about' %}">
+              Apropos
+            </a>
+            <a class="" href="{% url 'service' %}">
+              Nos Services
+            </a>
+            <a class="" href="{% url 'controle' %}">
+              Controle
+            </a>
+            <a class="" href="{% url 'deconnexion' %}">
+              DECONNEXION
+            </a>
+
+          </div>
+        </div>
+        <a class="navbar-brand" href="index.html">
+          <span>
+            COTAM_Asbl
+          </span>
+        </a>
+        <div class="user_option">
+          <form class="form-inline">
+            <button class="btn  nav_search-btn" type="submit">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </button>
+          </form>
+          <a href="">
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div class="name_style">
+          <h6>
+            I
+            m
+            p
+            e
+            r
+            a
+            t
+            o
+            r
+            _
+            p
+            l
+            a
+            t
+          </h6>
+        </div>
+      </nav>
+    </header>
+    <!-- end header section -->
+  </div>
+
+
+  <!-- we do section -->
+
+  <section class="wedo_section layout_padding" style="margin-top: -9%;">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          NOS SERVICES
+        </h2>
+        <p>
+          voici les quelques details de ce que nous faisons avec notre application
+        </p>
+      </div>
+      
+      <div style="display: block; margin-top:-5%" >
+        <div class="row">
+          <div class="col-md-6 col-lg-3">
+            <div class="box pr-0 pr-lg-5">
+              <div class="img-box">
+                <img src="{% static 'images/user-regular.svg' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                 Identification <br> Propriètaire
+                </h5>
+                <p>
+                  Identifiez-vous ici en tant que Propriètaire de la moto pour permettre aux agents de l'ordre de vous retrouver en cas de perte de la moto 
+                </p>
+                <a href="{% url 'idpro' %}">
+                  ACCEDER
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="box pr-0 pr-lg-5">
+              <div class="img-box">
+                <img src="{% static 'images/motorcycle-solid.svg' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Identification <br> Moto
+                </h5>
+                <p>
+                  Cliquez en bas sur le bouton acceder pour proceder aux processus d'identification de votre moto pour vous rassurer dans la circulation
+                </p>
+                <a href="{% url 'idmoto' %}">
+                  ACCEDER
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="box pr-0 pr-lg-5">
+              <div class="img-box">
+                <img src="{% static 'images/sellsy.svg' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Enregistrement des plaques <br> 
+                </h5>
+                <p>
+                  cliquez sur acceder au operation d'Enregistrement de la plaque pour attribuer une identification unique à votre moto.
+                </p>
+                <a href="{% url 'vente' %}">
+                 ACCEDER
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="box pr-0 pr-lg-5">
+              <div class="img-box">
+                <img src="{% static 'images/check-solid.svg' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Controle <br>
+                  Plaques
+                </h5>
+                <p>
+                  Nous effectuons un controle sùr et afiable <br> <br> <br> <br>
+                </p>
+                <a href="{% url 'controle' %}">
+                  ACCEDER
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-lg-3">
+            <div class="box pr-0 pr-lg-5">
+              <div class="img-box">
+                <img src="{% static 'images/user-regular.svg' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                 Gestion des <br> Exoneration
+                </h5>
+                <p>
+                  Acceder ici pour specifier les genres des motos et véhicules qui ne sont pas concernés par le controle <br> <br> 
+                </p>
+                <a href="{% url 'exo' %}">
+                  ACCEDER
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="box pr-0 pr-lg-5">
+              <div class="img-box">
+                <img src="{% static 'images/motorcycle-solid.svg' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Genre <br> Moto
+                </h5>
+                <p>
+                  Cliquez en bas sur le bouton acceder pour configurer les genres des motos qui seront reconnus lors l'identification. <br> <br>
+                </p>
+                <a href="{% url 'genre' %}">
+                  ACCEDER
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="box pr-0 pr-lg-5">
+              <div class="img-box">
+                <img src="{% static 'images/sellsy.svg' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Gestion des <br> Utilisations
+                </h5>
+                <p>
+                   Spécifiez ici tous les types d'Utilisations des motos qui sont reconnus sur toute l'etendue nationale
+                  <br> <br>
+                  </p>
+                <a href="{% url 'utili' %}">
+                 ACCEDER
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="box pr-0 pr-lg-5">
+              <div class="img-box">
+                <img src="{% static 'images/check-solid.svg' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Pays des<br>
+                  Fabrication
+                </h5>
+                <p>
+                  Spécifiez ici les pays de fabrication des pays reconnus en RDC.<br> <br> <br>
+                </p>
+                <a href="{% url 'pays' %}">
+                  ACCEDER
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+  <!-- end we do section -->
+
+
+  <!-- info section -->
+
+ 
+
+  <!-- end info section -->
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="info_contact">
+            <h4>
+              Addresses
+            </h4>
+            <div class="contact_link_box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                 Commune de Goma
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Appel +243 997857477
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  impplat@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+          <div class="info_social">
+            <a href="">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_link_box">
+            <h4>
+              Liens
+            </h4>
+            <div class="info_links">
+              <a class="active" href="{% url 'index' %}">
+                <img src="images/nav-bullet.png" alt="">
+                
+              </a>
+              <a class="" href="{% url 'about' %}">
+                <img src="images/nav-bullet.png" alt="">
+                A proposS
+              </a>
+              <a class="" href="{% url 'service' %}">
+                <img src="images/nav-bullet.png" alt="">
+                Services
+              </a>
+              <a class="" href="{% url 'testimonial' %}">
+                <img src="images/nav-bullet.png" alt="">
+                Controle
+              </a>
+              <a class="" href="{% url 'deconnexion' %}">
+                <img src="images/nav-bullet.png" alt="">
+                Deconnexion
+              </a>
+             
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info_detail">
+            <h4>
+              Info
+            </h4>
+            <p>
+              necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful
+            </p>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <h4>
+            Subscribe
+          </h4>
+          <form action="#">
+            <input type="text" placeholder="Enter email" />
+            <button type="submit">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <p>
+            &copy; <span id="displayYear"></span> Tout droit reservé. conçue par 
+            <a href="https://html.design/">BADERHA MAHAMULI DIEUMERCI</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.js' %}"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="{% static 'js/custom.js' %}"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+  <!-- End Google Map -->
+</body>
+
+</html>

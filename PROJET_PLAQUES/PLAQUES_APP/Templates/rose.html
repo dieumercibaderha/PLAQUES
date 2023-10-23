@@ -1,0 +1,162 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte_Rose</title>
+    <style>
+        td{
+            border: solid 1px black;
+
+        }
+    </style>
+
+
+
+</head>
+<body style="font-family:tahoma; ">
+    <center>
+       <center>
+       
+       </center>
+        <table border="1"  style=" width:80%; font-size: 10px; text-align:center; background-color: rgb(241, 230, 227); font-family:tahoma; ">
+            <tr>
+                <td colspan="9">
+                   <div style="display: flex;margin-left:2%; font-size:13px">
+                    <div>
+                        <h6>
+                            PROVINCE DU NORD-KIVU <br>
+                            MINISTERE PROVINCIALE DE FINANCE 
+                        </h6>
+                        <img class="logo" style="width: 40px; height:40px;" src="http://127.0.0.1:8000/{% static 'images/arm.png' %}" alt="Non_LOGO">
+                        <h6>
+                            Direction Générale des Recettes du Nord-Kivu
+                        </h6>
+                        <h4>"DGR-NK"</h4>
+                    </div>
+            
+                    <div style="margin-left:9%; width:53%">
+                        <h5>REPUBLIQUE DEMOCRATIQUE DU CONGO</h5> <br> 
+                        <h5>DEMANDE D'IMMATRICULATION D'UN <br> ENGIN CYCLE MOTEUR</h5>
+            
+                    </div>
+                    <img class="qr" style="width: 80px; height:80px; margin-left:-1%" src="http://127.0.0.1:8000/{% static 'images/qrid.png' %}" alt="Non_LOGO">
+                   </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="9">
+                   <div style="margin-left: 70%;">
+                    <p>N°PLAQUE : <strong>{{plaque}}</strong> </p>
+                   
+                   </div>
+                </td>
+    
+            </tr>
+            <tr>
+                <td>MARQUE</td>
+                <td>TYPE</td>
+                <td>ANNEE DE <br> FABRICATION</td>
+                <td>NOMBRE DE CV</td>
+                <td colspan="2">SOURCE D'ENERGIE<br>(Indiquez la mention utile)</td>
+                <td>COULEUR <br> DE LA MOTO</td>
+                <td>PROVENANCE</td>
+                <td>DATE DE LA PREMIERE MISE  EN CIRCULATION EN RDC </td>
+            </tr>
+            <tr>
+                <td><strong>{{motomarque}}</strong></td>
+                <td><strong>{{motonom}}</strong></td>
+                <td><strong>{{motoanne}}</strong></td>
+                <td>--------</td>
+                <td><strong>{{motosource}}</strong></td>
+                <td><strong>{{motosource}}</strong></td>
+                <td><strong>{{motocouleur}}</strong></td>
+                <td><strong>{{motopays}}</strong></td>
+                <td><strong>{{motodate}}</strong></td>
+            </tr>
+            <tr>
+                <td colspan="3" style="text-align: center;">GENRE <br>(donnez la mention utile)  </td>
+                <td>UTILISATION DE LA MOTO</td>
+                
+                <td >SI LA MOTO EST EXONORE DE LA TAXE <br>(Mettez la mention utile)</td>
+                <td colspan="4" style="text-align: left; padding-left:2%">NUMERO CHASSIS COMPLET : ...<strong>{{motochassis}}</strong> </td>
+            
+            </tr>
+            <tr>
+                <td colspan="3" rowspan="3" style="padding: 6%;">
+                    <strong>{{motogenre}}</strong>
+                    
+                </td>
+                <td rowspan="3">
+                   <strong>{{mototype}}</strong>
+                </td>
+                <td rowspan="3" style="padding-left:-5%;"> <ol style="margin-left: -16%;">
+                    <strong>{{exo}}</strong>
+                </ol></td>
+                
+               
+                <td rowspan="6" colspan="4" style="text-align: center;">
+                    <h6 style="margin-top: -5%;">NUMERO MOTEUR</h6>
+          
+          <p style="margin-top: -4%;">...<strong>{{motomoteur}}</strong>...</p>
+                    <h6>AVIS IMPORTANT</h6>
+                    <p style="margin-top: -4%;">En cas de session ou de sunistre de la moto vous etes prié d'en faire la declaration auprès des services de la DGRNK dans le delais le plus brefs</p>
+                    <p>Fait à Goma le ... <strong>{{motodate}}</strong></p>
+                </td>
+            
+            </tr>
+            <tr>
+
+            </tr>
+            <tr>
+
+            </tr>
+            <tr>
+                <td colspan="5">INDIQUEZ LE LIEU DE L'ADMINISTRATION QUI DETIENT LE DOSSIER DE LA MOTO</td>    
+            </tr>
+            <tr>
+                <td colspan="5" style="text-align: center;"> <STRong>COORDINATION DES TAXIMENS MOTOS</STRong></td>    
+            </tr>
+            <tr>
+                <td colspan="5">EMPLACEMENT RESERVE à L'ADMINISTRATION</td>    
+            </tr>
+            <tr>
+                <td colspan="4" style="padding-left: 1%;">
+                    <h4>SOMME PERCUE</h4>
+                    <p>
+                        PLAQUE + VIGNETTE AUTOCOLLANTE :... <strong>20$</strong>
+                    </p>
+                    <p>
+                        CERTIFICAT D'IMMATRICULATION :...<strong>5$</strong>
+                    </p>
+                    <p>
+                        TOTAL :...<strong>25$</strong>
+                    </p>
+
+                </td>
+                <td colspan="5">
+                    <div style="margin-left: 10%; text-align:left;">
+                    <p>Nom_Proprietaire: ... <strong>{{motopro}}</strong> </p>
+                    <p>Adresse: ....................<strong>{{proadresse}}</strong> </p>
+                    <p>N°Tel: ......................<strong>{{protel}}</strong> </p> <br>
+                    <p style="text-align: center;margin-top:-4%">SIGNATURE (procedé de la mention in et approuvée) <br> (Sceau pour les personnes Morales et autres établissements)</p>
+                   <br> <br>  <br> <br></div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="9" style="text-align: center;"> <br> <br>
+                    <h3>
+                        VOUS ETES TENUS DE PRESENTER CETTE PIECE EN CAS DE CESSION OU DE SINISTRE DE LA MOTO <br><br>
+                        LA DIRECTION GENERALE DES RECETTES DU NORD-KIVU <br> <br>
+
+                    </h3>
+                    
+                </td>
+            </tr>
+    
+        </table>
+    </center>
+</body>
+</html>
